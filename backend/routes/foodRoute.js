@@ -10,7 +10,9 @@ const foodRouter = express.Router();
 
 // Image Storage engine
 const Storage = multer.diskStorage({
-  destination: "uploads",
+  destination: (req, file, cb) => {
+    cb(null, '/tmp');
+  },
   filename: (req, file, cb) => {
     cb(null, `${Date.now()}_${file.originalname}`);
   },
