@@ -9,9 +9,12 @@ import orderRouter from "./routes/orderRoute.js";
 import tableRouter from "./routes/tableRoute.js";
 import managerRouter from "./routes/managerRoute.js";
 import adminRouter from "./routes/adminRoute.js";
+import dotenv from "dotenv"
+
 // app config
 const app = express();
 const port = 4000;
+dotenv.config();
 
 //middleware
 app.use(express.json());
