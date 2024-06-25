@@ -11,13 +11,14 @@ const QRCodePrintComponent = React.forwardRef(({ value }, ref) => (
 
 const TableRow = ({ table, onEdit, onDelete }) => {
   const qrCodeRef = useRef();
+  const url = import.meta.env.VITE_BASE_URL;
 
   return (
     <tr>
       <td>
         <QRCodePrintComponent
           ref={qrCodeRef}
-          value={`http://localhost:5173/?table=${table.number}`}
+          value={`${url}/?table=${table.number}`}
         />
       </td>
       <td>{table.number}</td>
